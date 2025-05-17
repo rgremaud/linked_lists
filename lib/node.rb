@@ -1,5 +1,9 @@
 class Node
+attr_accessor :value
 
-# Node class, containing two instance variables, #value and #next_node, set both as nil by default.
+def initialize
+  @value = nil
+  @next_node = nil
+end
 
 end
