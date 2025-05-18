@@ -5,8 +5,10 @@ new_list = Linked_list.new
 
 p new_list.name = "Gremaud Family"
 
-p new_list.append("Howie")
+new_list.prepend("Whitney")
+new_list.prepend("Howie")
+new_list.prepend("Theo")
+new_list.prepend("Romain")
+p new_list.size
+p new_list.at(0) # expecting Whitney
 
-p new_list.prepend("Whitney")
-
-p new_list.head
