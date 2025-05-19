@@ -120,7 +120,7 @@ end
 def to_s
   string = ""
   current_node = @head
-  while current_node
+  while current_node != nil
     string += "( #{current_node.value} ) -> "
     current_node = current_node.next_node
   end
