@@ -10,5 +10,5 @@ new_list.prepend('Howie')
 new_list.prepend('Theo')
 new_list.prepend('Romain')
 
-puts new_list.contains?('Theo')
-puts new_list.contains?('Whitney')
+puts new_list.find('Romain')
+p new_list.find('Daphne')

@@ -111,9 +111,10 @@ class Linked_list
     loop do
       current_node = current_node.next_node
       index += 1
-      break if [value, nil].include?(current_node.value)
+      break if current_node.value == value || current_node.next_node.nil?
     end
-    return nil if current_node.value.nil?
+
+    return nil if current_node.next_node.nil?
 
     "#{current_node.value} found at index of #{index}"
   end
