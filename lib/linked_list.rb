@@ -76,16 +76,56 @@ def at(index)
     return "Current value at index value of #{index} is #{current_node.value}"
   end
 end
-# pop removes the last element from the list
-# contains?(value) returns true if the passed in value is in the list and otherwise returns false.
-# find(value) returns the index of the node containing value, or nil if not found.
-# to_s represent your LinkedList objects as strings, so you can print them out and preview them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> nil
-def print_list
-    current_node = @head
-    puts current_node.value
-    while (current_node = current_node.next_node)
-      puts current_node.value
-    end
+
+def pop
+  current_node = @head
+  loop do 
+    current_node = current_node.next_node
+    break if current_node.next_node == @tail
+  end
+  @tail = nil
+  current_node.next_node = nil
+  @tail = current_node
 end
+
+def contains?(value)
+  current_node = @head
+  while current_node.next_node != nil
+    if current_node.value == value
+      return true
+    else
+      return false
+    end
+  end
+end
+
+def find(value)
+  index = 0
+  current_node = @head
+  if current_node.value == value
+    return "#{current_node.value} found at index of #{index}"
+  end
+  loop do
+    current_node = current_node.next_node
+    index += 1
+    break if current_node.value == value || current_node.value == nil
+  end
+  if current_node.value == nil
+    return nil
+  else
+    return "#{current_node.value} found at index of #{index}"
+  end
+end
+
+def to_s
+  string = ""
+  current_node = @head
+  while current_node
+    string += "( #{current_node.value} ) -> "
+    current_node = current_node.next_node
+  end
+  string += "nil"
+  string
+  end
 
 end

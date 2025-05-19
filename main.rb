@@ -9,6 +9,6 @@ new_list.prepend("Whitney")
 new_list.prepend("Howie")
 new_list.prepend("Theo")
 new_list.prepend("Romain")
-p new_list.size
-p new_list.at(0) # expecting Whitney
+puts new_list
+
 

@@ -1,1 +1,1 @@
-Fun with linked lists and stuff
+Fun with linked lists
