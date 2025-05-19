@@ -14,7 +14,8 @@ class Linked_list
     else
       temp_node = Node.new
       temp_node.value = data
-      temp_node.next_node = @tail
+      temp_node.next_node = nil
+      @tail.next_node = temp_node
       @tail = temp_node
     end
   end
@@ -47,7 +48,7 @@ class Linked_list
         current_node = current_node.next_node
         break if current_node.next_node.nil?
       end
-      "Current size is #{size}"
+      size
     end
   end
 
@@ -128,5 +129,44 @@ class Linked_list
     end
     string += 'nil'
     string
+  end
+
+  def insert_at(value, index)
+    current_size = size
+    target_index = 0
+    current_node = @head
+    prepend(value) if index.zero?
+    append(value) if index == current_size
+    puts 'Invalid index number' if index > current_size
+    loop do
+      current_node = current_node.next_node
+      target_index += 1
+      break if target_index == index - 1
+    end
+    new_node = Node.new
+    new_node.value = value
+    new_node.next_node = current_node.next_node
+    current_node.next_node = new_node
+  end
+
+  def remove_at(index) # doesnt work w/index of 1
+    if index.zero?
+      @head = @head.next_node
+    elsif index == 1
+      node_to_remove = @head.next_node
+      @head.next_node = node_to_remove.next_node
+    else
+      current_size = size
+      target_index = 0
+      current_node = @head
+      puts 'Invalid index number' if index > current_size
+      loop do
+        current_node = current_node.next_node
+        target_index += 1
+        break if target_index == index - 1
+      end
+      next_node = current_node.next_node
+      current_node.next_node = next_node.next_node
+    end
   end
 end
