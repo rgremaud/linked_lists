@@ -6,6 +6,7 @@ linkedList.append("Whitney");
 linkedList.append("Dad");
 linkedList.append("Theo");
 // console.log(linkedList.findIndex("Howie"));
-console.log(linkedList.findIndex("Dad"));
+console.log(linkedList.at(3));
+console.log(linkedList.findIndex("Theo"));
 // console.log(linkedList.findIndex("howie"));
 console.log(linkedList.toString());
