@@ -5,4 +5,6 @@ linkedList.append("Howie");
 linkedList.append("Whitney");
 linkedList.append("Dad");
 linkedList.append("Theo");
-console.log(linkedList.test());
+console.log(linkedList.toString())
+console.log(linkedList.insertAt(0, "GrandP", "Nona"));
+console.log(linkedList.toString())
